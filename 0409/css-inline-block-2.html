@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 900px;
+
+            font-size: 0;
+            margin: auto;
+            background-color: #ccc;
+        }
+        .box {
+            width: 300px;
+            display: inline-block;
+            background-color: #ff8882;
+
+            font-size: 16px;
+
+            vertical-align: top;
+            /* top, middle, bottom, baseline */
+            /* 
+                Vertical-align只對inline, inline-block, table
+
+             */
+        }
+        /* 
+            inline-block 問題
+            元素之間會有4px不等的間距
+
+            解決方式：
+            1. 將父元素的文字設定為0
+            2. 將本身的元素文字還原
+            3. 設定對齊方式
+
+        
+         */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+        </div>
+    </div>
+</body>
+</html>
