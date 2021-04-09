@@ -7,16 +7,21 @@
     <title>Document</title>
     <style>
         .container {
-            width: 900px;
+            width:1100px;
 
             font-size: 0;
             margin: auto;
             background-color: #ccc;
         }
         .box {
-            width: 300px;
+            box-sizing: border-box;
+            /* width: 33.3333%; */
+
+            
+            width: calc(100% / 4);
+            text-align: justify;
             display: inline-block;
-            background-color: #ff8882;
+            /* background-color: #ff8882; */
 
             font-size: 16px;
 
@@ -26,6 +31,8 @@
                 Vertical-align只對inline, inline-block, table
 
              */
+
+            padding: 15px;
         }
         /* 
             inline-block 問題
@@ -43,6 +50,11 @@
 <body>
     <div class="container">
         <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque nam voluptatem rem? Sequi, accusamus?
         </div>
         <div class="box">
