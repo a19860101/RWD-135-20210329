@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI";
+        }
+        .container {
+            width: 1200px;
+            height: 600px;
+            background-color: #bbb;
+            margin: auto;
+            display: flex;
+            flex-flow: wrap row;
+
+            justify-content: space-between;
+            /* flex-start, center, flex-end, space-around, space-between, space-evenly */
+
+            align-items: stretch;
+            /* flex-start, center, flex-end, stretch, baseline*/
+
+        }
+        .box {
+            width: calc(100% / 6);
+            padding: 15px;
+            text-align: justify;
+
+            background-color: #fa0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>title 1</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aliquid quo facere, quod laboriosam ullam aspernatur perspiciatis est consequatur laborum officiis repellat explicabo quisquam reprehenderit consequuntur earum sequi nemo quos.
+            </p>
+            <a href="#">Link</a>
+        </div>
+        <div class="box">
+            <h2>title 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolore eum inventore obcaecati! Quam, commodi.
+            </p>
+            <a href="#">Link</a>
+        </div>
+        <div class="box">
+            <h2>title 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis culpa sint expedita sit molestias inventore molestiae laboriosam, beatae fugiat.
+            </p>
+            <a href="#">Link</a>
+        </div>
+        <div class="box">
+            <h2>title 4</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, voluptates.
+            </p>
+            <a href="#">Link</a>
+        </div>
+    </div>
+</body>
+</html>
