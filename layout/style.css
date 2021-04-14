@@ -47,6 +47,8 @@ header .row {
 header h1 {
     font-size: 72px;
     letter-spacing: 3px;
+
+    text-shadow: 3px 3px 5px rgba(0,0,0,.5);
 }
 header p {
     font-size: 20px;
