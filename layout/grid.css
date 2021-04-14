@@ -42,3 +42,13 @@
 .col-12 {
     flex: 0 0 calc(100% / 12 * 12);
 }
+/* 屬性選取器 */
+[class*="col-"]{
+    /* padding: 15px; */
+    padding: var(--spacing);
+}
+/* 
+    ^= 開頭是
+    *= 包含
+    $= 結尾是
+*/
