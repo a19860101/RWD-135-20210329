@@ -25,14 +25,29 @@ nav {
 }
 /* HEADER */
 header {
-    background-image: url("https://picsum.photos/id/35/1600/1200");
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.6),transparent),
+        url("https://picsum.photos/id/35/1600/1200");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 250px;
     padding-bottom: 250px;
+
+    color: #fff;
+
+    /* text-align: center; */
 }
 header .row {
     /* height: 650px; */
     /* align-items: center; */
+
+    /* justify-content: center; */
+}
+header h1 {
+    font-size: 72px;
+    letter-spacing: 3px;
+}
+header p {
+    font-size: 20px;
 }
