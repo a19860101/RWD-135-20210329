@@ -1,0 +1,18 @@
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: var(--dark);
+}
+.nav-collapse {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link {
+    color: var(--light);
+
+    text-decoration: none;
+    margin: 0 7px;
+}
