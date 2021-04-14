@@ -23,3 +23,16 @@ nav {
 .nav-toggle {
     display: none;
 }
+/* HEADER */
+header {
+    background-image: url("https://picsum.photos/id/35/1600/1200");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+header .row {
+    /* height: 650px; */
+    /* align-items: center; */
+}
