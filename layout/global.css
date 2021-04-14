@@ -1,0 +1,20 @@
+/* 變數 */
+:root {
+    --red: #e90b3b;
+    --blue: #008cdd;
+    --green: #00c066;
+    --dark: #181818;
+    --light: #d4d4d4;
+}
+/* reset css  重置css*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "微軟正黑體","Segoe UI";
+    box-sizing: border-box;
+}
+ul,li {
+    list-style: none;
+}
+
