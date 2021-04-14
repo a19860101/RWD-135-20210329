@@ -16,3 +16,10 @@ nav {
     text-decoration: none;
     margin: 0 7px;
 }
+.nav-toggle-btn {
+    color: var(--light);
+    text-decoration: none;
+}
+.nav-toggle {
+    display: none;
+}
