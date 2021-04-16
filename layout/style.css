@@ -56,9 +56,6 @@ header p {
 }
 
 /* Section-title 區塊標題 */
-.section-title h2{
-    position: relative;
-}
 /* 
     虛擬元素
     before,after
@@ -67,16 +64,38 @@ header p {
     2. 元素內
 
 */
-.section-title h2::before {
+.section-title h2{
+    font-size: 32px;
+    position: relative;
+}
+/* .section-title h2::before {
     content:"";
     display: inline-block;
     border-bottom: 5px solid #000;
     width: 30px;
     position: absolute;
     top: 0;
-}
-.section-title h2{
-    font-size: 32px;
+} */
+/* .section-title h2::after {
+    content:"";
+    display: inline-block; 
+    border-bottom: 5px solid #000;
+    width: 30px;
+    position: absolute;
+    bottom: 8px;
+    margin-left: 5px;
+} */
+.section-title h2::after {
+    content:"";
+    display: inline-block; 
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 8px;
+    margin-left: 5px;
+    /* border: 3px solid #000; */
 }
 .section-title p {
     font-size: 20px;
