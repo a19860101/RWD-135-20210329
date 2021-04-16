@@ -5,6 +5,7 @@
     --green: #00c066;
     --dark: #181818;
     --light: #d4d4d4;
+    --white: #fff;
     --spacing: 15px;
 }
 /* reset css  重置css*/
@@ -17,5 +18,28 @@
 }
 ul,li {
     list-style: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    /* color: var(--dark); */
+    /* background-color: var(--light); */
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+.btn-red {
+    background-color: var(--red);
+    color: var(--white);
+}
+.btn-blue {
+    background-color: var(--blue);
+    color: var(--white);
+}
+.btn-green {
+    background-color: var(--green);
+    color: var(--white);
 }
 
