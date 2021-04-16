@@ -69,9 +69,10 @@ header p {
 /* About */
 #about {
     padding: 150px 0;
+    background-color: #def8e6;
 }
 .about-content {
-    background-color: #ff7878;
+    background-color: #8fd9a8;
     /* padding: 30px; */
     border-radius: 5px;
 }
