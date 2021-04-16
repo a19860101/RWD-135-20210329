@@ -47,6 +47,10 @@
     /* padding: 15px; */
     padding: calc(3 * var(--spacing));
 }
+/*子代選取器*/
+.no-padding > [class*="col-"]{
+    padding: 0;
+}
 /* 
     ^= 開頭是
     *= 包含
