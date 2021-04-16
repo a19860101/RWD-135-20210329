@@ -45,7 +45,7 @@
 /* 屬性選取器 */
 [class*="col-"]{
     /* padding: 15px; */
-    padding: var(--spacing);
+    padding: calc(3 * var(--spacing));
 }
 /* 
     ^= 開頭是
