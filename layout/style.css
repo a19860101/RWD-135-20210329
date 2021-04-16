@@ -56,9 +56,24 @@ header p {
 }
 
 /* Section-title 區塊標題 */
-.section-title {
-    /* text-align: center; */
-    /* margin: auto; */
+.section-title h2{
+    position: relative;
+}
+/* 
+    虛擬元素
+    before,after
+    特色
+    1. 行內元素
+    2. 元素內
+
+*/
+.section-title h2::before {
+    content:"";
+    display: inline-block;
+    border-bottom: 5px solid #000;
+    width: 30px;
+    position: absolute;
+    top: 0;
 }
 .section-title h2{
     font-size: 32px;
