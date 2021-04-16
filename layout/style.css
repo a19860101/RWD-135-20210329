@@ -58,6 +58,7 @@ header p {
 /* Section-title 區塊標題 */
 .section-title {
     text-align: center;
+    margin: auto;
 }
 .section-title h2{
     font-size: 32px;
@@ -66,6 +67,9 @@ header p {
     font-size: 20px;
 }
 /* About */
+#about {
+    padding: 150px 0;
+}
 .about-content {
     background-color: #ff7878;
     padding: 30px;
