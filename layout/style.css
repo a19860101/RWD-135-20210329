@@ -52,4 +52,22 @@ header h1 {
 }
 header p {
     font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Section-title 區塊標題 */
+.section-title {
+    text-align: center;
+}
+.section-title h2{
+    font-size: 32px;
+}
+.section-title p {
+    font-size: 20px;
+}
+/* About */
+.about-content {
+    background-color: #ff7878;
+    padding: 30px;
+    border-radius: 5px;
 }
