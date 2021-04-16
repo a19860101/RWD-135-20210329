@@ -76,3 +76,7 @@ header p {
     /* padding: 30px; */
     border-radius: 5px;
 }
+/* Service */
+#service {
+    padding: 150px 0;
+}
