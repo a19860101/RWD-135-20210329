@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: #fa0;
+
+            /* transition: 5s; */
+            /* transition-property: width; */
+            /* transition-duration: 3s; */
+            /* transition-delay: 0s; */
+            /* transition-timing-function: linear; */
+            /* ease, ease-in, ease-out, ease-in-out, linear */
+            text-align: right;
+        }
+
+        .box:hover  {
+            /* background-color: #0af; */
+            /* width: 600px; */
+        }
+        .container:hover .box {
+            width: 600px;
+            transition-property: width;
+            transition-duration: 3s;
+        }
+        .container:hover .ease {
+            transition-timing-function: ease;
+        }
+        .container:hover .easeIn {
+            transition-timing-function: ease-in;
+        }
+        .container:hover .easeOut {
+            transition-timing-function: ease-out;
+        }
+        .container:hover .easeInOut {
+            transition-timing-function: ease-in-out;
+        }
+        .container:hover .linear {
+            transition-timing-function: linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box ease">ease</div>
+        <div class="box easeIn">ease-in</div>
+        <div class="box easeOut">ease-out</div>
+        <div class="box easeInOut">ease-in-out</div>
+        <div class="box linear">linear</div>
+    </div>
+</body>
+</html>
