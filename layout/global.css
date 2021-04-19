@@ -23,6 +23,9 @@ img {
     vertical-align: top;
     /* display: block; */
 }
+iframe {
+    vertical-align: top;
+}
 /* width */
 .w-100 {
     width: 100%;
@@ -156,4 +159,9 @@ img {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;
+}
+.form-control:focus {
+    outline: 0;
+    border: 1px solid #fa9770;
+    background-color: #f6fff9;
 }
