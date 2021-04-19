@@ -118,6 +118,11 @@ header p {
 #news {
     padding: 150px 0;
 }
+/* Contact */
+#contact {
+    padding: 150px 0;
+    background-color: #def8e6;
+}
 /* Footer */
 footer {
     background-color: var(--dark);

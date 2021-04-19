@@ -36,6 +36,7 @@ img {
     /* background-color: var(--light); */
     border-radius: 4px;
     letter-spacing: 1px;
+    font-size: 14px;
 }
 .btn-red {
     background-color: var(--red);
@@ -150,7 +151,7 @@ img {
     display: inline-block;
 }
 .form-control {
-    border: 1px solid #696969;
+    border: 1px solid #65be81;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
