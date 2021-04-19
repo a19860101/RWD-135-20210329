@@ -144,3 +144,15 @@ img {
 .py-4 {padding-top: calc(4 * var(--spacing));padding-bottom: calc(4 * var(--spacing));}
 .py-5 {padding-top: calc(5 * var(--spacing));padding-bottom: calc(5 * var(--spacing));}
 
+/* Form */
+.form-label {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.form-control {
+    border: 1px solid #696969;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}

@@ -89,9 +89,9 @@ header p {
     content:"";
     display: inline-block; 
     width: 20px;
-    height: 20px;
+    height: 5px;
     background-color: #000;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     position: absolute;
     bottom: 8px;
     margin-left: 5px;
@@ -117,4 +117,9 @@ header p {
 /* news */
 #news {
     padding: 150px 0;
+}
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--light);
 }
