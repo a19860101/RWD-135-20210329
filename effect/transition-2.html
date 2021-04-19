@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #fa0;
+
+            /* transition: 1s 2s linear; */
+            /* transition: [property, duration, delay, timing-function] */
+
+            /* transition: width 1s 0s, background-color 1s 1s; */
+
+            transition-property: width, background-color;
+            transition-duration: 1s;
+            transition-delay: 0s, 1s;
+        }
+        .box:hover {
+            width: 300px;
+            background-color: #0af;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

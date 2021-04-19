@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            display: inline-block;
+            text-decoration: none;
+            font-family: "Segoe UI";
+            color: #222;
+            position: relative;
+           
+        }
+        /* 
+            虛擬元素 
+            1. 產生的元素為行內元素
+        
+        */
+        a::after {
+            content:"";
+            display: inline-block;
+            border-bottom: 5px solid firebrick;
+            width: 100%;
+            transform: scaleX(0);
+            transition: .4s;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }
+        a:hover::after {
+            transform: scaleX(1);
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="#">關於我們</a>
+    <a href="#">商品介紹</a>
+</body>
+</html>
