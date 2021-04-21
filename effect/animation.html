@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #b204f6;
+            
+            /* border-radius: 50%; */
+            clip-path: circle();
+        
+            /* animation: fade 3s; */
+            /* animation-name: fadeOut;
+            animation-duration: 1s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-out; */
+            /* ease, ease-in, ease-out, ease-in-out, linear */
+
+            /* animation: fadeOut 1s 0s infinite alternate ease-out; */
+            animation: move 5s alternate infinite ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+        @keyframes fade {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+        @keyframes move {
+            0% {}
+            25% {transform: translate(500px,0)}
+            50% {transform: translate(500px,500px)}
+            75% {transform: translate(0,500px)}
+            100% {transform: translate(0,0)}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

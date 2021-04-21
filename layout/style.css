@@ -16,6 +16,23 @@ nav {
     text-decoration: none;
     margin: 0 7px;
 }
+.nav-menu .nav-link {
+    position: relative;
+}
+.nav-menu .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px solid #a5ff7c;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: .5s;
+    transform-origin: left;
+}
+.nav-menu .nav-link:hover::after {
+    transform: scaleX(1);
+}
 .nav-toggle-btn {
     color: var(--light);
     text-decoration: none;
