@@ -131,6 +131,30 @@ header p {
 #service {
     padding: 150px 0;
 }
+/* Portfolio */
+#portfolio a {
+    display: block;
+    position: relative;
+}
+#portfolio a span {
+    position: absolute;
+    background-color: rgba(0,0,0,.8);
+    z-index: 10;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    opacity: 1;
+    transition:  .3s;
+}
+#portfolio a:hover span {
+    opacity: 0;
+}
 /* news */
 #news {
     padding: 150px 0;
