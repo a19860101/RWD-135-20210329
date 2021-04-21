@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+        .box {
+            flex: 0 0 calc(100% / 4);
+            padding: 15px;
+        }
+
+        @media screen and (max-width: 1000px){
+            .container {
+                width: 600px;
+            }
+            .box {
+                flex: 0 0 calc(100% / 2);
+                padding: 15px;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .container {
+                width: 100%;
+            }
+            .box {
+                flex: 0 0 calc(100%);
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit voluptatum tempora ab minus necessitatibus vitae perspiciatis nam, officiis maxime, at ea dolore dicta aspernatur, voluptate mollitia! Temporibus quasi quidem totam!
+            </p>
+            <a href="#">link</a>
+        </div>
+        <div class="box">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit voluptatum tempora ab minus necessitatibus vitae perspiciatis nam, officiis maxime, at ea dolore dicta aspernatur, voluptate mollitia! Temporibus quasi quidem totam!
+            </p>
+            <a href="#">link</a>
+        </div>
+        <div class="box">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit voluptatum tempora ab minus necessitatibus vitae perspiciatis nam, officiis maxime, at ea dolore dicta aspernatur, voluptate mollitia! Temporibus quasi quidem totam!
+            </p>
+            <a href="#">link</a>
+        </div>
+        <div class="box">
+            <h2>title</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit voluptatum tempora ab minus necessitatibus vitae perspiciatis nam, officiis maxime, at ea dolore dicta aspernatur, voluptate mollitia! Temporibus quasi quidem totam!
+            </p>
+            <a href="#">link</a>
+        </div>
+    </div>
+</body>
+</html>
