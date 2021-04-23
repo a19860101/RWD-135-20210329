@@ -458,9 +458,11 @@ iframe {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;
+
+    transition: .5s;
 }
 .form-control:focus {
     outline: 0;
     border: 1px solid #fa9770;
-    background-color: #f6fff9;
+    background-color: #c6ffd9;
 }
