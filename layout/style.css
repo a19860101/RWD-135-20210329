@@ -1,44 +1,82 @@
 nav {
     width: 100%;
     display: flex;
-    align-items: center;
-    height: 60px;
+    /* align-items: center; */
+    /* height: 60px; */
     background-color: var(--dark);
+    flex-direction: column;
 }
 .nav-collapse {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 .nav-link {
     color: var(--light);
 
     text-decoration: none;
     margin: 0 7px;
+    display: block;
+    padding: 15px;
 }
 .nav-menu .nav-link {
     position: relative;
-}
-.nav-menu .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-bottom: 2px solid #a5ff7c;
-    left: 0;
-    bottom: -5px;
-    transform: scaleX(0);
-    transition: .5s;
-    transform-origin: left;
-}
-.nav-menu .nav-link:hover::after {
-    transform: scaleX(1);
 }
 .nav-toggle-btn {
     color: var(--light);
     text-decoration: none;
 }
 .nav-toggle {
-    display: none;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+@media (min-width: 600px){
+    nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        background-color: var(--dark);
+        flex-direction: row;
+    }
+    .nav-collapse {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .nav-link {
+        color: var(--light);
+    
+        text-decoration: none;
+        margin: 0 7px;
+        display: inline-block;
+        padding: 0;
+    }
+    .nav-menu .nav-link {
+        position: relative;
+    }
+    .nav-menu .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 2px solid #a5ff7c;
+        left: 0;
+        bottom: -5px;
+        transform: scaleX(0);
+        transition: .5s;
+        transform-origin: left;
+    }
+    .nav-menu .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+
+    .nav-toggle {
+        display: none;
+    }
 }
 /* HEADER */
 header {
