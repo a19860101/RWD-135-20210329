@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //運算子
+
+        //算術運算子
+        let x = 100;
+        let y = 60;
+        console.log(x + y);
+        console.log(x - y);
+        console.log(x * y);
+        console.log(x / y);
+        console.log(x % y);
+
+        //比較運算子
+        let a = 100;
+        let b = '100';
+        console.log(x > y);
+        console.log(x >= y);
+        console.log(x < y);
+        console.log(x <= y);
+        console.log(a == b);
+        console.log(a === b);//值與資料型態皆須相等
+        console.log(a != b);
+
+        //指定運算子
+        console.log(x = y);
+        console.log(x += y); // x = x + y
+        console.log(x -= y); // x = x - y
+        console.log(x *= y); // x = x * y
+        console.log(x /= y); // x = x / y
+        console.log(x %= y); // x = x % y
+
+        // 邏輯運算子
+        console.log(x > 0 && y > 0); //and
+        console.log(x > 0 || y > 0); //or
+        console.log(!y);
+
+        let z = 0;
+        // let z = null;
+        // let z = undefined;
+        console.log(!z); //z沒有值
+
+        //字串運算子
+        let user = 'John';
+        // let content = user + '您好!您是第' + a + '位訪客';
+
+        //字串樣板
+        let content = `${user}您好!您是第${a}位訪客`;
+
+        console.log(content);
+
+        console.log(100 + '哈囉');
+        console.log(100 + '100');
+
+        //三元運算子
+
+        let q = 6;
+
+        // console.log( q > 0 ? 'success' : 'error');
+
+        if(q > 0){
+            console.log('success');
+        }else{
+            console.log('error');
+        }
+
+
+
+    </script>
+</body>
+</html>
