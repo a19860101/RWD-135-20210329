@@ -71,12 +71,24 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">login</a>
+                        <a href="#" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#userInfo"><i class="fas fa-user"></i></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="userInfo" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">使用者你好</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Register</a></li>
+            </ul>
+        </div>
+    </div>
     <div id="slider" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -466,5 +478,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
