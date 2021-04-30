@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let drinks = new Array();
+        // drinks[0] = '紅茶';
+        // drinks[1] = '綠茶';
+        // drinks[2] = '奶茶';
+        // drinks[3] = '冰淇淋紅茶';
+
+        // let drinks = new Array('紅茶','綠茶','奶茶','冰淇淋紅茶');
+
+        let drinks = ['紅茶','綠茶','奶茶','冰淇淋紅茶','美子綠茶','柳橙綠茶'];
+
+        console.log(drinks);
+        // console.log(drinks[0]);
+        // console.log(drinks[1]);
+        // console.log(drinks[2]);
+
+        console.log(drinks.length);
+        
+
+        // 陣列迭代
+        // for
+        for(let i=0;i<drinks.length;i++){
+            console.log(drinks[i]);
+        }
+        // for...in
+        for(let idx in drinks){
+            console.log(drinks[idx]);
+        }
+        // for...of
+        for(let data of drinks){
+            console.log(data);
+        }
+        
+    </script>
+</body>
+</html>
