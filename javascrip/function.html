@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+       
+        // function test(){
+        //     let a = 100;
+        //     return a;
+        // }
+        //提升性
+        // function test(a){
+        //     return a*a;
+        // }
+
+        // let test = function(){
+        //     return 666;
+        // }
+
+        // let test = function(a,b){
+        //     return a*b;
+        // }
+        
+        //箭頭函式 arrow function
+        /* 
+            1. 只有一個參數時，()可省略
+            2. 只有return時，{}與return可省略
+        
+        */
+        
+        // let test = (a)=>{
+        //     return a;
+        // }
+
+        // let test = a => a;
+        
+
+        // let test = (a,b) => {
+        //     return a*b;
+        // }
+
+        // let test = (a,b) => a*b;
+
+        // let test = a => {
+        //     a += 1;
+        //     return a;
+        // }
+        
+        let test = (a,b) =>{
+            if(a > 0){
+                return a;
+            }else{
+                return b;
+            }
+        }
+        console.log(test(-16,18));
+    </script>
+</body>
+</html>

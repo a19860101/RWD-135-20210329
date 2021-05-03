@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let user = new Object();
+        // user.name = 'John';
+        // user.mail = 'john@gmail.com';
+        // user.gender = '男';
+
+        // let user = new Object({
+        //     name: 'John',
+        //     mail: 'john@gmail.com',
+        //     gender: '男'
+        // })
+
+        let user = {
+            name: 'John',
+            mail: 'john@gmail.com',
+            gender: '男'
+        }
+        console.log(user.name);
+        let drinks = [
+            {
+                name: '紅茶',
+                price: 15
+            },
+            {
+                name: '綠茶',
+                price: 15
+            },
+            {
+                name: '奶茶',
+                price: 20
+            },
+            {
+                name: '冰淇淋紅茶',
+                price: 45
+            },
+            {
+                name: '梅子綠茶',
+                price: 35
+            }
+        ];
+        // console.log(drinks[0].price);
+
+        // for(let drink of drinks){
+        //     console.log(drink.name);
+        //     console.log(drink.price);
+        // }
+        drinks.forEach(function(drink,idx){
+            console.log(drink.price);
+        })
+
+        // let drink_price = drinks.map(function(drink){
+        //     return drink.price; 
+        //     // return drink.name;
+
+        // })
+        // console.log(drink_price);
+        // let total = drink_price.reduce(function(a,b){
+        //     return a+b;
+        // })
+
+        // let drink_price = drinks.map(drink => drink.price);
+        // let total = drink_price.reduce((a,b)=>a+b);
+
+        let total = drinks.map(drink => drink.price).reduce((a,b)=>a+b);
+        
+        console.log(total);
+    </script>
+</body>
+</html>
