@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="title">
+            文件物件模型
+            <b>Document Object Model</b>
+        </h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto saepe esse nam beatae. Possimus, sapiente accusamus! Corrupti, praesentium ex in sint nisi a eaque explicabo perferendis debitis provident impedit consectetur!
+        </p>
+        <div class="lists">
+            <ul>
+                <li class="list">list 1</li>
+                <li class="list">list 2</li>
+                <li class="list">list 3</li>
+                <li class="list">list 4</li>
+            </ul>
+        </div>
+        <a href="#">link</a>
+    </div>
+    <script>
+        // let title = document.getElementById('title');
+        // console.log(title);
+
+        // let list = document.getElementsByClassName('list');
+        // console.log(list);
+        // console.log(list[0]);
+        // console.log(list[1]);
+        // console.log(list[2]);
+        // console.log(list[3]);
+        // for(let i=0;i<list.length;i++){
+        //     console.log(list[i]);
+        // }
+        // for(let data of list){
+        //     console.log(data);
+        // }
+       
+
+        let p = document.getElementsByTagName('p');
+        // console.log(p);
+
+        let el = document.querySelector('p');
+        // let els = Array.from(document.querySelectorAll('.list'));
+        let els = [...document.querySelectorAll('.list')];
+        els.map(function(data){
+            console.log(data);
+        })
+        
+        console.log(els);
+    </script>
+</body>
+</html>

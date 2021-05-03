@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            width: 600px;
+        }
+        .thumb {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="images/iphone-12-black-select-2020.png" class="img">
+        <div class="thumbs">
+            <img src="images/iphone-12-black-select-2020.png" class="thumb">
+            <img src="images/iphone-12-blue-select-2020.png" class="thumb">
+            <img src="images/iphone-12-green-select-2020.png" class="thumb">
+            <img src="images/iphone-12-purple-select-2021.png" class="thumb">
+            <img src="images/iphone-12-red-select-2020.png" class="thumb">
+            <img src="images/iphone-12-white-select-2020.png" class="thumb">
+        </div>
+    </div>
+    <script>
+        let thumbs = [...document.querySelectorAll('.thumb')];
+        // console.log(thumb);
+        for(let thumb of thumbs){
+            // console.log(thumb);
+            thumb.onclick = function(){
+                console.log('test')
+            }
+        }
+    </script>
+</body>
+</html>

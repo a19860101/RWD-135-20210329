@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">click</button>
+    <button class="btn2" onclick="hello()">click 2</button>
+    <button class="btn3">click 3</button>
+    <script>
+        let btn = document.querySelector('.btn');
+        btn.onclick = function(){
+            console.log('HELLO');
+        }
+        
+        function hello(){
+            console.log('hello');
+        }
+
+        let btn3 = document.querySelector('.btn3');
+        btn3.addEventListener('click',function(){
+            console.log('hello333');
+        });
+        </script>
+</body>
+</html>
