@@ -36,16 +36,22 @@
         }
         .tab-panel.active {
             display: block;
+            animation: fadeIn .5s;
         }
 
+        @keyframes fadeIn{
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
     </style>
 </head>
 <body>
     <div class="tab">
         <div class="tab-nav">
-            <a href="#" class="tab-link active">tab 1</a>
-            <a href="#" class="tab-link">tab 2</a>
-            <a href="#" class="tab-link">tab 3</a>
+            <a href="#tab-1" data-panel="#tab-1" class="tab-link active">tab 1</a>
+            <a href="#tab-2" data-panel="#tab-2" class="tab-link">tab 2</a>
+            <a href="#tab-3" data-panel="#tab-3" class="tab-link">tab 3</a>
+            <a href="#tab-4" data-panel="#tab-4" class="tab-link">tab 4</a>
         </div>
         <div class="tab-panel active" id="tab-1">
             <h2>title 1</h2>
@@ -57,13 +63,20 @@
             <h2>title 2</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo eum, asperiores eligendi inventore ex numquam dolorum, vero cupiditate sit veritatis repudiandae necessitatibus provident. Placeat, expedita eveniet. Laudantium, provident esse!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo eum, asperiores eligendi inventore ex numquam dolorum, vero cupiditate sit veritatis repudiandae necessitatibus provident. Placeat, expedita eveniet. Laudantium, provident esse!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo eum, asperiores eligendi inventore ex numquam dolorum, vero cupiditate sit veritatis repudiandae necessitatibus provident. Placeat, expedita eveniet. Laudantium, provident esse!
             </p>
         </div>
         <div class="tab-panel" id="tab-3">
             <h2>title 3</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo eum, asperiores eligendi inventore ex numquam dolorum, vero cupiditate sit veritatis repudiandae necessitatibus provident. Placeat, expedita eveniet. Laudantium, provident esse!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo eum, asperiores eligendi inventore ex numquam dolorum, vero cupiditate sit veritatis repudiandae necessitatibus provident. Placeat, expedita eveniet. Laudantium, provident esse!
             </p>
+        </div>
+        <div class="tab-panel" id="tab-4">
+            <h2>title 4</h2>
+            <img src="https://picsum.photos/id/34/300" alt="">
         </div>
     </div>
     <script>
@@ -75,6 +88,17 @@
                     tabLink.classList.remove('active');
                 }
                 e.target.classList.add('active');
+
+                // let href = e.target.getAttribute('href');
+                let href = e.target.dataset.panel;
+                console.log(href);
+
+                //tab-panel
+                let tabPanels = [...document.querySelectorAll('.tab-panel')];
+                for(let tabPanel of tabPanels){
+                    tabPanel.classList.remove('active');
+                }
+                document.querySelector(href).classList.add('active');
             }
         }
 
