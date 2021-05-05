@@ -7,7 +7,7 @@
     },
     {
         "id":2,
-        "title": "iPhone 12",
+        "title": "iPhone 12 Black",
         "price": "26900",
         "image": "iphone-12-black-select-2020.png"
     },
@@ -25,8 +25,8 @@
     },
     {
         "id":5,
-        "title": "iPhone XR",
-        "price": "18900",
-        "image": ""
+        "title": "iPhone 12 Blue",
+        "price": "26900",
+        "image": "iphone-12-blue-select-2020.png"
     }
 ]

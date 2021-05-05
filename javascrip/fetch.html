@@ -7,12 +7,22 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container"></div>
     <script>
         let url = 'data.json';
         fetch(url)
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            for(let d of data){
+                console.log(d);
+                let h2 = document.createElement('h2');
+                h2.append(d.title)
+                let img = document.createElement('img');
+                img.setAttribute('src',`images/${d.image}`);
+                img.setAttribute('width',150)
+                document.querySelector('.container').append(h2,img)
+            }
         })
         // fetch(url)
         // .then(function(response){
