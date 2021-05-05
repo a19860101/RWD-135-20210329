@@ -24,6 +24,7 @@
             padding: 10px;
             text-decoration: none;
             color: #000;
+            transition: .5s;
         }
         .tab-link.active {
             background-color: #fffbdf;
@@ -65,5 +66,18 @@
             </p>
         </div>
     </div>
+    <script>
+        let tabLinks = [...document.querySelectorAll('.tab-link')];
+        for(let tabLink of tabLinks){
+            tabLink.onclick = e => {
+                // console.log(e.target);
+                for(let tabLink of tabLinks){
+                    tabLink.classList.remove('active');
+                }
+                e.target.classList.add('active');
+            }
+        }
+
+    </script>
 </body>
 </html>
