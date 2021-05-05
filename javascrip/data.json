@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "title": "iPhone 12 Mini",
+        "price": "23900",
+        "image": "iphone-12-mini-blue-select-2020.png"
+    },
+    {
+        "id":2,
+        "title": "iPhone 12",
+        "price": "26900",
+        "image": "iphone-12-black-select-2020.png"
+    },
+    {
+        "id":3,
+        "title": "iPhone 12 Pro",
+        "price": "33900",
+        "image": "iphone-12-pro-blue-hero.png"
+    },
+    {
+        "id":4,
+        "title": "iPhone 12 Pro Max",
+        "price": "37900",
+        "image": "iphone-12-pro-max-gold-hero.png"
+    },
+    {
+        "id":5,
+        "title": "iPhone XR",
+        "price": "18900",
+        "image": ""
+    }
+]
