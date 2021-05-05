@@ -8,6 +8,7 @@
 </head>
 <body>
     <input type="text" id="search" onkeyup="search()">
+    <input type="text" id="search2">
     <ul>
         <li>熟成紅茶</li>
         <li>麗春紅茶</li>
@@ -23,11 +24,27 @@
         <li>熟成檸果</li>
     </ul>
     <script>
+        let s2 = document.querySelector('#search2');
+        s2.onkeyup = () => {
+            let search = document.querySelector('#search2').value;
+            let drinks = [...document.querySelectorAll('li')];
+            for(let drink of drinks){
+                if(drink.textContent.indexOf(search) > -1){
+                    drink.style.display = '';
+                }else{
+                    drink.style.display = 'none';
+                }
+            }
+        }
         function search(){
             let search = document.querySelector('#search').value;
             let drinks = [...document.querySelectorAll('li')];
             for(let drink of drinks){
-                console.log(drink.textContent);
+                if(drink.textContent.indexOf(search) > -1){
+                    drink.style.display = '';
+                }else{
+                    drink.style.display = 'none';
+                }
             }
         }
     </script>
