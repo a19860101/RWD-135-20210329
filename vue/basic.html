@@ -21,6 +21,9 @@
         <div v-if="qty >= 10"> 熱賣中</div>
         <div v-else-if="qty > 0 && qty < 10">低庫存</div>
         <div v-else>缺貨中</div>
+        <a href="#" v-on:click="test()">click</a>
+        <a href="#" @click="test()">click</a>
+
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
@@ -64,6 +67,11 @@
                             "image": "iphone-12-blue-select-2020.png"
                         }
                     ]
+                }
+            },
+            methods:{
+                test:function(){
+                    alert('hello vue!!')
                 }
             }
         }).mount('#app');
