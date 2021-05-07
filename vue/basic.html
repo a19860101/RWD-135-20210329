@@ -10,6 +10,14 @@
     <div id="app">
         <h1>{{title}}</h1>
         <p>{{desc}}</p>
+        <a v-bind:href="link" target="_blank">web site</a>
+        <a :href="link" target="_blank">web site</a>
+        <div v-for="item in items">
+            <div>{{item}}</div>
+        </div>
+        <div v-for="(product,idx) in products">
+            <h2>{{product.title}} - ${{product.price}} - {{idx}}</h2>
+        </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
@@ -17,7 +25,41 @@
             data:function(){
                 return {
                     title: 'Hello Vue 3  !!!',
-                    desc: 'The Progressive JavaScript Framework'
+                    desc: 'The Progressive JavaScript Framework',
+                    link: 'https://v3.vuejs.org',
+                    items:['apple','cat','dog'],
+                    products:[
+                        {
+                            "id":1,
+                            "title": "iPhone 12 Mini",
+                            "price": "23900",
+                            "image": "iphone-12-mini-blue-select-2020.png"
+                        },
+                        {
+                            "id":2,
+                            "title": "iPhone 12 Black",
+                            "price": "26900",
+                            "image": "iphone-12-black-select-2020.png"
+                        },
+                        {
+                            "id":3,
+                            "title": "iPhone 12 Pro",
+                            "price": "33900",
+                            "image": "iphone-12-pro-blue-hero.png"
+                        },
+                        {
+                            "id":4,
+                            "title": "iPhone 12 Pro Max",
+                            "price": "37900",
+                            "image": "iphone-12-pro-max-gold-hero.png"
+                        },
+                        {
+                            "id":5,
+                            "title": "iPhone 12 Blue",
+                            "price": "26900",
+                            "image": "iphone-12-blue-select-2020.png"
+                        }
+                    ]
                 }
             }
         }).mount('#app');
