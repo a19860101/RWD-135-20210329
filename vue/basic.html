@@ -18,6 +18,9 @@
         <div v-for="(product,idx) in products">
             <h2>{{product.title}} - ${{product.price}} - {{idx}}</h2>
         </div>
+        <div v-if="qty >= 10"> 熱賣中</div>
+        <div v-else-if="qty > 0 && qty < 10">低庫存</div>
+        <div v-else>缺貨中</div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
@@ -28,6 +31,7 @@
                     desc: 'The Progressive JavaScript Framework',
                     link: 'https://v3.vuejs.org',
                     items:['apple','cat','dog'],
+                    qty: 0,
                     products:[
                         {
                             "id":1,
