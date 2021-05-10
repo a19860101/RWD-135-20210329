@@ -33,7 +33,7 @@
             opacity: 1;
             z-index: 1;
         }
-        .cartItems.active .cartItems-container {
+        .cartItems .cartItems-container {
             padding: 30px;
             width: 400px;
             position: fixed;
@@ -41,11 +41,12 @@
             right: 0;
             top: 0;
             background: #fff;
-            /* transform: translateX(100%); */
+            transform: translateX(100%);
+            z-index: 2;
         }
         .cartItems.active .cartItems-container {
             transform: translateX(0);
-            z-index: 2;
+           
         }
     </style>
 </head>
@@ -61,7 +62,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active position-relative"  href="#">
+                            <a class="nav-link active position-relative"  href="#" @click="isOpen=!isOpen">
                                 <i class="fas fa-shopping-cart fa-lg"></i>
                                 <span class="cartNum bg-danger text-light position-absolute rounded-circle">
                                     {{cartItems.length}}
@@ -84,9 +85,10 @@
             </div>
         </div>
         <!-- 購物車 -->
-        <div class="cartItems">
-            <div class="cartItems-overlay"></div>
+        <div class="cartItems" :class="{active:isOpen}">
+            <div class="cartItems-overlay"  @click="isOpen=!isOpen"></div>
             <div class="cartItems-container">
+                <span @click="isOpen=!isOpen"><i class="fas fa-times-circle fa-lg"></i></span>
                 <h2>購物車</h2>
                 <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-4 border-bottom border-secondary">
                     <img :src="`images/${data.img}`" width="70">
@@ -136,6 +138,7 @@
                 return {
                     products:data,
                     cartItems:[],
+                    isOpen:false
                 }
             },
             methods:{
@@ -147,7 +150,7 @@
                 },
                 clearCart(){
                     this.cartItems.length = 0;
-                }
+                },
             },
             computed:{
                 priceArray(){
