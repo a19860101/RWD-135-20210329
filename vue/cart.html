@@ -28,13 +28,16 @@
             left: 0;
             opacity: 0;
             z-index: -1;
+            transition: 1s;
+            /* display: none; */
         }
         .cartItems.active .cartItems-overlay {
+            z-index: 2;
             opacity: 1;
-            z-index: 1;
+            /* display: block; */
         }
         .cartItems .cartItems-container {
-            padding: 30px;
+            padding: 20px;
             width: 400px;
             position: fixed;
             height: 100vh;
@@ -43,6 +46,7 @@
             background: #fff;
             transform: translateX(100%);
             z-index: 2;
+            transition: 1s;
         }
         .cartItems.active .cartItems-container {
             transform: translateX(0);
@@ -86,18 +90,18 @@
         </div>
         <!-- 購物車 -->
         <div class="cartItems" :class="{active:isOpen}">
-            <div class="cartItems-overlay"  @click="isOpen=!isOpen"></div>
+            <div class="cartItems-overlay" @click="isOpen=!isOpen"></div>
             <div class="cartItems-container">
                 <span @click="isOpen=!isOpen"><i class="fas fa-times-circle fa-lg"></i></span>
                 <h2>購物車</h2>
-                <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-4 border-bottom border-secondary">
+                <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-2 border-bottom border-secondary">
                     <img :src="`images/${data.img}`" width="70">
-                    <h3>{{data.title}}</h3>
-                    <div class="ms-auto">${{data.price}}</div>
+                    <div>{{data.title}}</div>
+                    <div class="ms-auto me-1">${{data.price}}</div>
                     <button class="btn btn-danger" @click="removeItem(idx)">移除</button>
                 </div>
-                <hr class="border-bottom border-dark">
-                <h3> 總金額 {{total}}</h3>
+                <h3 v-if="cartItems.length > 0" class="my-2"> 總金額 {{total}}</h3>
+                <h3 v-else>空的喔!!</h3>
                 <button class="btn btn-warning" @click="clearCart()" v-if="cartItems.length > 0">清空購物車</button>
             </div>
         </div>
