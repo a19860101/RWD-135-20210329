@@ -28,6 +28,7 @@
                 <img :src="`images/${data.img}`" width="70">
                 <h3>{{data.title}}</h3>
                 <div class="ms-auto">${{data.price}}</div>
+                <button class="btn btn-danger" @click="removeItem(idx)">移除</button>
             </div>
         </div>
     </div>
@@ -72,6 +73,9 @@
             methods:{
                 addToCart(idx){
                     this.cartItems.push(this.products[idx]);
+                },
+                removeItem(idx){
+                    this.cartItems.splice(idx,1);
                 }
             }
         }).mount('#app');
