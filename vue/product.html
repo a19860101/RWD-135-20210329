@@ -17,6 +17,9 @@
 <body>
     <div id="app">
         <h1>{{title}} {{colorName}}</h1>
+        <h2 v-if="qty >= 10">熱賣中</h2>
+        <h2 v-else-if="qty > 0 && qty < 10">低庫存</h2>
+        <h2 v-else>補貨中</h2>
         <div>剩餘數量 {{qty}}</div>
         <div>{{desc}}</div>
         {{img}}
