@@ -19,6 +19,34 @@
             top: -5px;
             font-size: 14px;
         }
+        .cartItems .cartItems-overlay {
+            position: fixed;
+            background: rgba(0,0,0,.8);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -1;
+        }
+        .cartItems.active .cartItems-overlay {
+            opacity: 1;
+            z-index: 1;
+        }
+        .cartItems.active .cartItems-container {
+            padding: 30px;
+            width: 400px;
+            position: fixed;
+            height: 100vh;
+            right: 0;
+            top: 0;
+            background: #fff;
+            /* transform: translateX(100%); */
+        }
+        .cartItems.active .cartItems-container {
+            transform: translateX(0);
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
@@ -57,16 +85,19 @@
         </div>
         <!-- 購物車 -->
         <div class="cartItems">
-            <h2>購物車</h2>
-            <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-4 border-bottom border-secondary">
-                <img :src="`images/${data.img}`" width="70">
-                <h3>{{data.title}}</h3>
-                <div class="ms-auto">${{data.price}}</div>
-                <button class="btn btn-danger" @click="removeItem(idx)">移除</button>
+            <div class="cartItems-overlay"></div>
+            <div class="cartItems-container">
+                <h2>購物車</h2>
+                <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-4 border-bottom border-secondary">
+                    <img :src="`images/${data.img}`" width="70">
+                    <h3>{{data.title}}</h3>
+                    <div class="ms-auto">${{data.price}}</div>
+                    <button class="btn btn-danger" @click="removeItem(idx)">移除</button>
+                </div>
+                <hr class="border-bottom border-dark">
+                <h3> 總金額 {{total}}</h3>
+                <button class="btn btn-warning" @click="clearCart()" v-if="cartItems.length > 0">清空購物車</button>
             </div>
-            <hr class="border-bottom border-dark">
-            <h3> 總金額 {{total}}</h3>
-            <button class="btn btn-warning" @click="clearCart()" v-if="cartItems.length > 0">清空購物車</button>
         </div>
     </div>
     <script>
