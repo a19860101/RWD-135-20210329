@@ -30,6 +30,7 @@
                 <div class="ms-auto">${{data.price}}</div>
                 <button class="btn btn-danger" @click="removeItem(idx)">移除</button>
             </div>
+            <button class="btn btn-warning" @click="clearCart()" v-if="cartItems.length > 0">清空購物車</button>
         </div>
     </div>
     <script>
@@ -76,6 +77,9 @@
                 },
                 removeItem(idx){
                     this.cartItems.splice(idx,1);
+                },
+                clearCart(){
+                    this.cartItems.length = 0;
                 }
             }
         }).mount('#app');
