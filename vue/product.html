@@ -16,6 +16,7 @@
 </head>
 <body>
     <div id="app">
+        <div>購物車數量:{{cart}}</div>
         <h1>{{title}} {{colorName}}</h1>
         <h2 v-if="qty >= 10">熱賣中</h2>
         <h2 v-else-if="qty > 0 && qty < 10">低庫存</h2>
@@ -29,7 +30,9 @@
         </div>
         <div v-for="(product,idx) in products" class="color" :style="{backgroundColor:product.color}" @click="changeImg(product,idx)"></div>
         <div v-for="(product,idx) in products" class="color" :style="{'background-color':product.color}" @click="changeImg(product,idx)"></div>
-
+        <hr>
+        <button @click="cart+=1" v-if="qty > 0">加入購物車</button>
+        <button  disabled v-else>補貨中</button>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script>
@@ -84,7 +87,8 @@
                     desc: '為實現我們的環保目標，iPhone 12 與 iPhone 12 mini 不隨附電源轉接器和 EarPods。包裝盒內隨附的是一條支援快速充電的 USB‑C 對 Lightning 連接線，並可與 USB‑C 電源轉接器及電腦連接埠相容。',
                     // img: 'iphone-12-black-select-2020.png',
                     products:data,
-                    selectedIdx:0
+                    selectedIdx:0,
+                    cart:0
                 }
             },
             methods:{
