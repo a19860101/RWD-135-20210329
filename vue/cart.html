@@ -13,63 +13,60 @@
     <div id="app">
         <div class="container">
             <div class="row">
-                <div class="col-4" v-for="(prod,idx) in products">
+                <div class="col-3" v-for="(prod,idx) in products">
                     <img :src="`images/${prod.img}`" class="w-100">
-                    <h3>iPhone 12{{prod.colorName}}</h3>
-                    <button class="btn btn-primary btn-sm">加入購物車</button>
+                    <h3>{{prod.title}}</h3>
+                    <div>${{prod.price}}</div>
+                    <button class="btn btn-primary btn-sm" @click="addToCart(idx)">加入購物車</button>
                 </div>
             </div>
+        </div>
+        <!-- 購物車 -->
+        <div class="cartItems">
+            {{cartItems}}
         </div>
     </div>
     <script>
         const data=[
                 {
                     id:1,
-                    color:'black',
-                    colorName: '黑色',
-                    img:'iphone-12-black-select-2020.png',
+                    title: 'iPhone 12 Mini',
+                    img:'iphone-12-mini-blue-select-2020.png',
+                    price: '23900',
                     qty: 6
                 },
                 {
                     id:2,
-                    color:'blue',
-                    colorName: '藍色',
-                    img:'iphone-12-blue-select-2020.png',
-                    qty: 12
-                },
-                {
-                    id:3,
-                    color:'green',
-                    colorName: '綠色',
-                    img:'iphone-12-green-select-2020.png',
-                    qty: 1
-                },
-                {
-                    id:4,
-                    color:'purple',
-                    colorName: '紫色',
+                    title: 'iPhone 12',
                     img:'iphone-12-purple-select-2021.png',
-                    qty: 0
-                },
-                {
-                    id:5,
-                    color:'red',
-                    colorName: '紅色',
-                    img:'iphone-12-red-select-2020.png',
+                    price: '26900',
                     qty: 6
                 },
                 {
-                    id:6,
-                    color:'white',
-                    colorName: '白色',
-                    img:'iphone-12-white-select-2020.png',
-                    qty: 13
+                    id:3,
+                    title: 'iPhone 12 Pro',
+                    img:'iphone-12-pro-gold-hero.png',
+                    price: '33900',
+                    qty: 6
+                },
+                {
+                    id:4,
+                    title: 'iPhone 12 Pro Max',
+                    img:'iphone-12-pro-max-blue-hero.png',
+                    price: '37900',
+                    qty: 6
                 },
             ];
         Vue.createApp({
             data(){
                 return {
-                    products:data
+                    products:data,
+                    cartItems:[],
+                }
+            },
+            methods:{
+                addToCart(idx){
+                    this.cartItems.push(this.products[idx]);
                 }
             }
         }).mount('#app');
