@@ -24,12 +24,14 @@
         <!-- 購物車 -->
         <div class="cartItems">
             <h2>購物車</h2>
-            <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-4 border-bottom border-dark">
+            <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-4 border-bottom border-secondary">
                 <img :src="`images/${data.img}`" width="70">
                 <h3>{{data.title}}</h3>
                 <div class="ms-auto">${{data.price}}</div>
                 <button class="btn btn-danger" @click="removeItem(idx)">移除</button>
             </div>
+            <hr class="border-bottom border-dark">
+            <h3> 總金額 {{total}}</h3>
             <button class="btn btn-warning" @click="clearCart()" v-if="cartItems.length > 0">清空購物車</button>
         </div>
     </div>
@@ -80,6 +82,25 @@
                 },
                 clearCart(){
                     this.cartItems.length = 0;
+                }
+            },
+            computed:{
+                priceArray(){
+                    return this.cartItems.map(data=>data.price);
+                },
+                totalPirce(){
+                    if(this.cartItems.length > 0){
+                        return this.priceArray.reduce((a,b)=>parseInt(a)+parseInt(b));
+                    }else{
+                        return 0;
+                    }
+                },
+                total(){
+                    if(this.cartItems.length > 0){
+                        return this.cartItems.map(data=>data.price).reduce((a,b)=>parseInt(a)+parseInt(b))
+                    }else{
+                            return 0;
+                    }
                 }
             }
         }).mount('#app');
