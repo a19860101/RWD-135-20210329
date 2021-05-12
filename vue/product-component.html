@@ -20,7 +20,8 @@
         <app-product 
             :title="title"
             :desc="desc"
-            :products="products"   
+            :products="products"  
+            @change-idx="changeIdx"
         ></app-product>
 
     </div>
@@ -94,11 +95,22 @@
                     selectedIdx:0,
                     cart:0
                 }
+            },
+            methods:{
+                changeIdx(idx){
+                    this.selectedIdx = idx;
+                    alert(this.selectedIdx);
+                }
             }
         })
         app.component('app-product',{
             props:['title','desc','products'],
-            template:'#app-product'
+            template:'#app-product',
+            methods:{
+                changeIdx(idx){
+                    this.$emit('changeIdx',idx);
+                }
+            }
         })
         app.mount('#app');
     </script>
