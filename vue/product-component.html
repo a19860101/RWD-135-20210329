@@ -20,7 +20,10 @@
         <app-product 
             :title="title"
             :desc="desc"
-            :products="products"  
+            :products="products"
+            :qty="qty",
+            :color-name="colorName"
+            :img="img"
             @change-idx="changeIdx"
         ></app-product>
 
@@ -99,12 +102,23 @@
             methods:{
                 changeIdx(idx){
                     this.selectedIdx = idx;
-                    alert(this.selectedIdx);
                 }
+            },
+            computed:{
+                img(){
+                    return this.products[this.selectedIdx].img
+                },
+                colorName(){
+                    return this.products[this.selectedIdx].colorName
+                },
+                qty(){
+                    return this.products[this.selectedIdx].qty
+                }
+                
             }
         })
         app.component('app-product',{
-            props:['title','desc','products'],
+            props:['title','desc','products','colorName','img','qty'],
             template:'#app-product',
             methods:{
                 changeIdx(idx){
