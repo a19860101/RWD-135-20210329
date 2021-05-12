@@ -10,7 +10,9 @@
 <body>
     <div id="app">
         <app-content></app-content>
-
+        <h1>{{num}}</h1>
+        <app-btn @plus="num += 1"></app-btn>
+        <app-btn @plus="plus"></app-btn>
     </div>
     <template id="app-content">
         <h2>{{title}} {{num}}</h2>
@@ -23,6 +25,20 @@
         const app = Vue.createApp({
             data(){
                 return {
+                    num:0
+                }
+            },
+            methods:{
+                plus(){
+                    this.num += 1;
+                }
+            }
+        });
+        app.component('app-btn',{
+            template:`<button @click="plus()">+1</button>`,
+            methods:{
+                plus(){
+                    this.$emit('plus');
                 }
             }
         })
@@ -38,11 +54,6 @@
                     alert('hello vue')
                 }
             },
-            computed:{
-                num(){
-                    return 100
-                }
-            }
         })
         app.mount('#app');
     </script>
