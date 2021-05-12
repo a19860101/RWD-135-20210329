@@ -9,13 +9,13 @@
 </head>
 <body>
     <div id="app">
-        <app-content></app-content>
+        <app-content :numk="num"></app-content>
         <h1>{{num}}</h1>
         <app-btn @plus="num += 1"></app-btn>
         <app-btn @plus="plus"></app-btn>
     </div>
     <template id="app-content">
-        <h2>{{title}} {{num}}</h2>
+        <h2>{{title}} {{numk}}</h2>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam neque quas asperiores eos reprehenderit natus ab quisquam debitis incidunt inventore quam ipsam similique culpa harum quae adipisci, mollitia nulla?
         </p>
@@ -43,6 +43,7 @@
             }
         })
         app.component('app-content',{
+            props:['numk'],
             template:'#app-content',
             data(){
                 return {
