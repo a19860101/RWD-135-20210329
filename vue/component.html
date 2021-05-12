@@ -10,19 +10,39 @@
 <body>
     <div id="app">
         <app-title></app-title>
+        <app-nav></app-nav>
     </div>
     <template id="app-title">
         <h1>Hello Component!!!!</h1>
+    </template>
+    <template id="app-nav">
+        <nav>
+            <a href="#">link 1</a>
+            <a href="#">link 2</a>
+            <a href="#">link 3</a>
+        </nav>
     </template>
     <script>
         const app = Vue.createApp({
             data(){
                 return {}
+            },
+            components:{
+                'app-nav':{
+                    template:'#app-nav'
+                    // template:`
+                    //     <nav>
+                    //         <a href="#">link 1</a>
+                    //         <a href="#">link 2</a>
+                    //         <a href="#">link 3</a>
+                    //     </nav>
+                    // `
+                }
             }
         });
         app.component('app-title',{
             // template:'<h1>Hello Component!!!</h1>'
-            template:`<h1 style="color:red">Hello Component</h1>`
+            // template:`<h1 style="color:red">Hello Component</h1>`
             // template:'#app-title'
         });
         app.mount('#app');
