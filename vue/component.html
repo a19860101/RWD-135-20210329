@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <app-title></app-title>
+    </div>
+    <template id="app-title">
+        <h1>Hello Component!!!!</h1>
+    </template>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {}
+            }
+        });
+        app.component('app-title',{
+            // template:'<h1>Hello Component!!!</h1>'
+            template:`<h1 style="color:red">Hello Component</h1>`
+            // template:'#app-title'
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
