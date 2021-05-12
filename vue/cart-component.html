@@ -85,7 +85,10 @@
         <!-- 產品列 -->
         <app-product :products="products"></app-product>
         <!-- 購物車 -->
-        <app-cart :cart-items="cartItems"></app-cart>
+        <app-cart 
+            :cart-items="cartItems" 
+            @clear-cart="clearCart"
+            @remove-item="removeItem"></app-cart>
     </div>
     <template id="app-product">
         <div class="container">
@@ -207,7 +210,15 @@
         });
         app.component('app-cart',{
             template:'#app-cart',
-            props:['cartItems']
+            props:['cartItems'],
+            methods:{
+                clearCart(){
+                    this.$emit('clearCart');
+                },
+                removeItem(idx){
+                    this.$emit('removeItem',idx)
+                }
+            }
         })
         app.mount('#app');
         
