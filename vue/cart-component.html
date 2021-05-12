@@ -69,7 +69,8 @@
             @add-to-cart="addToCart"></app-product>
         <!-- 購物車 -->
         <app-cart 
-            :cart-items="cartItems" 
+            :cart-items="cartItems"
+            :total="total" 
             @clear-cart="clearCart"
             @remove-item="removeItem"></app-cart>
     </div>
@@ -108,8 +109,8 @@
         </div>
     </template>
     <template id="app-cart">
-        <div class="cartItems" :class="{active:isOpen}">
-            <div class="cartItems-overlay" @click="isOpen=!isOpen"></div>
+        <div class="cartItems active" :class="{active:isOpen}">
+            <!-- <div class="cartItems-overlay" @click="isOpen=!isOpen"></div> -->
             <div class="cartItems-container">
                 <span @click="isOpen=!isOpen"><i class="fas fa-times-circle fa-lg"></i></span>
                 <h2>購物車</h2>
@@ -220,7 +221,7 @@
         });
         app.component('app-cart',{
             template:'#app-cart',
-            props:['cartItems'],
+            props:['cartItems','total'],
             methods:{
                 clearCart(){
                     this.$emit('clearCart');
