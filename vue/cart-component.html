@@ -85,7 +85,22 @@
         <!-- 產品列 -->
         <app-product :products="products"></app-product>
         <!-- 購物車 -->
-        <div class="cartItems" :class="{active:isOpen}">
+        <app-cart :cart-items="cartItems"></app-cart>
+    </div>
+    <template id="app-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-3" v-for="(prod,idx) in products">
+                    <img :src="`images/${prod.img}`" class="w-100">
+                    <h3>{{prod.title}}</h3>
+                    <div>${{prod.price}}</div>
+                    <button class="btn btn-primary btn-sm" @click="addToCart(idx)">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="app-cart">
+        <div class="cartItems active" :class="{active:isOpen}">
             <div class="cartItems-overlay" @click="isOpen=!isOpen"></div>
             <div class="cartItems-container">
                 <span @click="isOpen=!isOpen"><i class="fas fa-times-circle fa-lg"></i></span>
@@ -99,18 +114,6 @@
                 <h3 v-if="cartItems.length > 0" class="my-2"> 總金額 {{total}}</h3>
                 <h3 v-else>空的喔!!</h3>
                 <button class="btn btn-warning" @click="clearCart()" v-if="cartItems.length > 0">清空購物車</button>
-            </div>
-        </div>
-    </div>
-    <template id="app-product">
-        <div class="container">
-            <div class="row">
-                <div class="col-3" v-for="(prod,idx) in products">
-                    <img :src="`images/${prod.img}`" class="w-100">
-                    <h3>{{prod.title}}</h3>
-                    <div>${{prod.price}}</div>
-                    <button class="btn btn-primary btn-sm" @click="addToCart(idx)">加入購物車</button>
-                </div>
             </div>
         </div>
     </template>
@@ -149,7 +152,21 @@
             data(){
                 return {
                     products:data,
-                    cartItems:[],
+                    cartItems:[ {
+                        id:1,
+                        title: 'iPhone 12 Mini',
+                        img:'iphone-12-mini-blue-select-2020.png',
+                        price: '23900',
+                        qty: 6
+                    },
+                    {
+                        id:2,
+                        title: 'iPhone 12',
+                        img:'iphone-12-purple-select-2021.png',
+                        price: '26900',
+                        qty: 6
+                    }
+                ],
                     isOpen:false
                 }
             },
@@ -187,6 +204,10 @@
         app.component('app-product',{
             template:'#app-product',
             props:['products']
+        });
+        app.component('app-cart',{
+            template:'#app-cart',
+            props:['cartItems']
         })
         app.mount('#app');
         
