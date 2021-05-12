@@ -17,6 +17,7 @@
 </head>
 <body>
     <div id="app">
+        <div>購物車數量:{{cart}}</div>
         <app-product 
             :title="title"
             :desc="desc"
@@ -25,6 +26,7 @@
             :color-name="colorName"
             :img="img"
             @change-idx="changeIdx"
+            @plus="cart += 1"
         ></app-product>
 
     </div>
@@ -41,7 +43,7 @@
             <img v-for="(product,idx) in products" :src="`images/${product.img}`" width="80" @click="changeIdx(idx)">
         </div>
         <hr>
-        <button @click="cart+=1" v-if="qty > 0">加入購物車</button>
+        <button @click="plus()" v-if="qty > 0">加入購物車</button>
         <button  disabled v-else>補貨中</button>
     </template>
     <script>
@@ -123,6 +125,9 @@
             methods:{
                 changeIdx(idx){
                     this.$emit('changeIdx',idx);
+                },
+                plus(){
+                    this.$emit('plus');
                 }
             }
         })
