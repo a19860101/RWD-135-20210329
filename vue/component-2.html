@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <app-content></app-content>
+
+    </div>
+    <template id="app-content">
+        <h2>{{title}} {{num}}</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam neque quas asperiores eos reprehenderit natus ab quisquam debitis incidunt inventore quam ipsam similique culpa harum quae adipisci, mollitia nulla?
+        </p>
+        <a href="#" @click="test()">link</a>
+    </template>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                }
+            }
+        })
+        app.component('app-content',{
+            template:'#app-content',
+            data(){
+                return {
+                    title:'Hello Vue!@!'
+                }
+            },
+            methods:{
+                test(){
+                    alert('hello vue')
+                }
+            },
+            computed:{
+                num(){
+                    return 100
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+</html>
