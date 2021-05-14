@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="aqi in aqis">
+            <h2>觀測站:{{aqi.County}}--{{aqi.SiteName}} </h2>
+            <div v-if="aqi.Status=='普通'" style="color:#009b1a">空氣品質 :{{aqi.Status}}</div>
+            <div v-if="aqi.Status=='對敏感族群不健康'" style="color:#ff1a39">空氣品質 :{{aqi.Status}}</div>
+            <div v-if="aqi.Status=='良好'" style="color:#0092cc">空氣品質 :{{aqi.Status}}</div>
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    aqis:[]
+                }
+            },
+            created(){
+                let url = 'https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&format=json';
+                axios(url)
+                .then(res => {
+                    console.log(res.data.records);
+                    this.aqis = res.data.records;
+                })
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
