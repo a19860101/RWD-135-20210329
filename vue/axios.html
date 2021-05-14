@@ -57,11 +57,15 @@
                     })
                 },
                 getAllCounty(){
+                    // 取得陣列中的重複資料
                     let county = this.aqis.map(data=> data.County);
-                    return county.filter((data,idx,arr)=>{
-                        console.log(data);
-                        return arr.indexOf(data) === idx;
-                    })
+                    // return county.filter((data,idx,arr)=>{
+                    //     console.log(data);
+                    //     return arr.indexOf(data) === idx;
+                    // })
+
+                    // return Array.from(new Set(county))
+                    return [...(new Set(county))];
                 }
             }
         }).mount('#app')
