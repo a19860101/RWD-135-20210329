@@ -70,9 +70,11 @@
         <!-- 購物車 -->
         <app-cart 
             :cart-items="cartItems"
-            :total="total" 
+            :total="total"
+            :is-open="isOpen"
             @clear-cart="clearCart"
-            @remove-item="removeItem"></app-cart>
+            @remove-item="removeItem"
+            @is-cart-open="isCartOpen"></app-cart>
     </div>
     <template id="app-nav">
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -109,10 +111,10 @@
         </div>
     </template>
     <template id="app-cart">
-        <div class="cartItems active" :class="{active:isOpen}">
+        <div class="cartItems" :class="{active:isOpen}">
             <!-- <div class="cartItems-overlay" @click="isOpen=!isOpen"></div> -->
             <div class="cartItems-container">
-                <span @click="isOpen=!isOpen"><i class="fas fa-times-circle fa-lg"></i></span>
+                <span @click="isCartOpen()"><i class="fas fa-times-circle fa-lg"></i></span>
                 <h2>購物車</h2>
                 <div v-for="(data,idx) in cartItems" class="d-flex align-items-center p-2 border-bottom border-secondary">
                     <img :src="`images/${data.img}`" width="70">
@@ -176,7 +178,7 @@
                         qty: 6
                     }
                 ],
-                    isOpen:false
+                    isOpen:true
                 }
             },
             methods:{
@@ -189,6 +191,10 @@
                 clearCart(){
                     this.cartItems.length = 0;
                 },
+                isCartOpen(){
+                    this.isOpen = !this.isOpen;
+                    console.log(this.isOpen);
+                }
             },
             computed:{
                 priceArray(){
@@ -221,13 +227,16 @@
         });
         app.component('app-cart',{
             template:'#app-cart',
-            props:['cartItems','total'],
+            props:['cartItems','total','isOpen'],
             methods:{
                 clearCart(){
                     this.$emit('clearCart');
                 },
                 removeItem(idx){
                     this.$emit('removeItem',idx)
+                },
+                isCartOpen(){
+                    this.$emit('isCartOpen');
                 }
             }
         });
