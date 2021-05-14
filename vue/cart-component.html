@@ -62,7 +62,7 @@
 <body>
     <div id="app">
         <!-- 選單 -->
-        <app-nav :cart-items="cartItems"></app-nav>
+        <app-nav :cart-items="cartItems" @is-cart-open="isCartOpen"></app-nav>
         <!-- 產品列 -->
         <app-product 
             :products="products"
@@ -86,7 +86,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active position-relative"  href="#" @click="isOpen=!isOpen">
+                            <a class="nav-link active position-relative"  href="#" @click="isCartOpen()">
                                 <i class="fas fa-shopping-cart fa-lg"></i>
                                 <span class="cartNum bg-danger text-light position-absolute rounded-circle">
                                     {{cartItems.length}}
@@ -112,7 +112,7 @@
     </template>
     <template id="app-cart">
         <div class="cartItems" :class="{active:isOpen}">
-            <!-- <div class="cartItems-overlay" @click="isOpen=!isOpen"></div> -->
+            <div class="cartItems-overlay"@click="isCartOpen()"></div>
             <div class="cartItems-container">
                 <span @click="isCartOpen()"><i class="fas fa-times-circle fa-lg"></i></span>
                 <h2>購物車</h2>
@@ -178,7 +178,7 @@
                         qty: 6
                     }
                 ],
-                    isOpen:true
+                    isOpen:false
                 }
             },
             methods:{
@@ -193,7 +193,6 @@
                 },
                 isCartOpen(){
                     this.isOpen = !this.isOpen;
-                    console.log(this.isOpen);
                 }
             },
             computed:{
@@ -242,7 +241,12 @@
         });
         app.component('app-nav',{
             template:'#app-nav',
-            props:['cartItems']
+            props:['cartItems'],
+            methods:{
+                isCartOpen(){
+                    this.$emit('isCartOpen');
+                }
+            }
         })
         app.mount('#app');
         
