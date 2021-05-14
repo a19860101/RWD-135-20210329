@@ -11,9 +11,9 @@
 <body>
     <div id="app">
         <select name="" id="county" v-model="county">
-            <option value="臺北市">臺北市</option>
-            <option value="新北市">新北市</option>
-            <option value="桃園市">桃園市</option>
+            <template v-for="d of getAllCounty">
+                <option :value="d">{{d}}</option>
+            </template>
         </select>
         <div v-for="d of getDataByCounty">
             <h2>觀測站:{{d.County}}--{{d.SiteName}} </h2>
@@ -54,6 +54,13 @@
                     return this.aqis.filter(data=>{
                         console.log(data.County);
                         return data.County == this.county;
+                    })
+                },
+                getAllCounty(){
+                    let county = this.aqis.map(data=> data.County);
+                    return county.filter((data,idx,arr)=>{
+                        console.log(data);
+                        return arr.indexOf(data) === idx;
                     })
                 }
             }
