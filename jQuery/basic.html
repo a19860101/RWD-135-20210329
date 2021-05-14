@@ -14,14 +14,31 @@
     </style>
 </head>
 <body>
-    <button class="btn">click</button>
-    <h1 class="h1">title</h1>
+
     <script>
-        $('.btn').click(()=>{
-            // $('h1').css('color','red');
-            $('.h1').addClass('active');
+
+        // $(document).ready(function(){
+        //     $('.btn').click(()=>{
+        //     // $('h1').css('color','red');
+        //         $('.h1').addClass('active');
+        //     })
+        // })
+
+        // $(function(){
+        //     $('.btn').click(()=>{
+        //         $('.h1').addClass('active');
+        //     })
+        // })
+        $(()=>{
+            $('.btn').click(()=>{
+                $('.h1').addClass('active');
+            })
         })
+        
     </script>
 
+
+<button class="btn">click</button>
+<h1 class="h1">title</h1>
 </body>
 </html>
