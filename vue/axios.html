@@ -39,16 +39,6 @@
                     this.aqis = res.data.records;
                 })
             },
-            // methods:{
-            //        getData(){
-            //         let url = 'https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&format=json';
-            //         axios(url)
-            //         .then(res => {
-            //             console.log(res.data.records);
-            //             this.aqis = res.data.records;
-            //         })
-            //     }
-            // },
             computed:{
                 getDataByCounty(){
                     return this.aqis.filter(data=>{
