@@ -15,8 +15,14 @@
             <option value="新北市">新北市</option>
             <option value="桃園市">桃園市</option>
         </select>
-        <h1>{{getDataByCounty}}</h1>
-    </div>
+        <div v-for="d of getDataByCounty">
+            <h2>觀測站:{{d.County}}--{{d.SiteName}} </h2>
+            <div v-if="d.Status=='普通'" style="color:#009b1a">空氣品質 :{{d.Status}}</div>
+            <div v-if="d.Status=='對敏感族群不健康'" style="color:#ff1a39">空氣品質 :{{d.Status}}</div>
+            <div v-if="d.Status=='良好'" style="color:#0092cc">空氣品質 :{{d.Status}}</div>
+
+        </div>
+    </div> 
     <script>
         Vue.createApp({
             data(){
@@ -45,7 +51,7 @@
             // },
             computed:{
                 getDataByCounty(){
-                    return this.aqis.map(data=>{
+                    return this.aqis.filter(data=>{
                         console.log(data.County);
                         return data.County == this.county;
                     })
