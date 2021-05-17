@@ -62,17 +62,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
-            $('nav').find('a').click(function(){
+            $('nav').find('a').click(function(e){
+                // e.preventDefault();
                 let href = $(this).attr('href');
                 let offset = $(href).offset().top;
                 $('html,body').animate({
                     scrollTop: offset
                 })
+                return false;
+                
             })
-            $('#gotop').click(function(){
+            $('#gotop').click(function(e){
+                e.preventDefault();
                 $('html,body').animate({
                     scrollTop: 0
                 })
+                // return false;
+               
             })
             $(window).scroll(function(){
                 let h = $(window).scrollTop();
