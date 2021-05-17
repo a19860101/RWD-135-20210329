@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" integrity="sha512-b42SanD3pNHoihKwgABd18JUZ2g9j423/frxIP5/gtYgfBz/0nDHGdY/3hi+3JwhSckM3JLklQ/T6tJmV7mZEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -82,13 +83,17 @@
             })
             $(window).scroll(function(){
                 let h = $(window).scrollTop();
+                let a_in = 'animated jackInTheBox';
+                let a_out = 'animated hinge';
                 console.log(h);
                 if(h > 700){
                     // $('#gotop').show();
-                    $('#gotop').fadeIn();
+                    // $('#gotop').fadeIn();
+                    $('#gotop').show().removeClass(a_out).addClass(a_in);
                 }else{
                     // $('#gotop').hide();
-                    $('#gotop').fadeOut();
+                    // $('#gotop').fadeOut();
+                    $('#gotop').removeClass(a_in).addClass(a_out);
                 }
             })
         })
