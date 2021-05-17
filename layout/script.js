@@ -7,9 +7,11 @@ $(function(){
     $('.modal-btn').click(function(){
         let modal = $(this).attr('href');
         $(modal).fadeIn();
+        return false;
     })
     $('.modal-close').click(function(){
         $('.modal').fadeOut();
+        return false;
     })
     
 })
