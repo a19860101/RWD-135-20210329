@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+            position: fixed;
+        }
+        nav a {
+            color: #eee;
+            margin: 0 10px;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+        }
+        #about {background-color: #ff4949;}
+        #service {background-color: #4998ff;}
+        #product {background-color: #49ffc2;}
+        #contact {background-color: #deff49;}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#service">SERVICE</a>
+        <a href="#product">PRODUCT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+    <div id="about" class="container"></div>
+    <div id="service" class="container"></div>
+    <div id="product" class="container"></div>
+    <div id="contact" class="container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('nav').find('a').click(function(){
+                let href = $(this).attr('href');
+                let offset = $(href).offset().top;
+                $('html,body').animate({
+                    scrollTop: offset
+                })
+            })
+        })
+    </script>
+</body>
+</html>
