@@ -207,3 +207,30 @@ footer {
     background-color: var(--dark);
     color: var(--light);
 }
+
+
+/* modal */
+.modal {
+    display: none;
+}
+.modal.active {
+    display: block;
+}
+.modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+}
+.modal-container {
+    position: absolute;
+    background-color: #fff;
+    /* margin-top: 15%; */
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    border-radius: 5px;
+    width: 70%;
+}
