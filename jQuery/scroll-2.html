@@ -32,6 +32,19 @@
         #service {background-color: #4998ff;}
         #product {background-color: #49ffc2;}
         #contact {background-color: #deff49;}
+        #gotop {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            text-align: center;
+            line-height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +58,7 @@
     <div id="service" class="container"></div>
     <div id="product" class="container"></div>
     <div id="contact" class="container"></div>
+    <a href="#" id="gotop">TOP</a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
@@ -53,6 +67,11 @@
                 let offset = $(href).offset().top;
                 $('html,body').animate({
                     scrollTop: offset
+                })
+            })
+            $('#gotop').click(function(){
+                $('html,body').animate({
+                    scrollTop: 0
                 })
             })
         })
