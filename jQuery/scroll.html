@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             background-color: #222;
-
+            position: fixed;
         }
         nav a {
             color: #eee;
@@ -46,5 +46,34 @@
     <div id="product" class="container"></div>
     <div id="contact" class="container"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let a = $('#about').offset().top;
+            let s = $('#service').offset().top;
+            let p = $('#product').offset().top;
+            let c = $('#contact').offset().top;
+            console.log(a);
+            $('nav').find('a').eq(0).click(function(){
+                $('html,body').animate({
+                    scrollTop: a
+                });
+            })
+            $('nav').find('a').eq(1).click(function(){
+                $('html,body').animate({
+                    scrollTop: s
+                });
+            })
+            $('nav').find('a').eq(2).click(function(){
+                $('html,body').animate({
+                    scrollTop: p
+                });
+            })
+            $('nav').find('a').eq(3).click(function(){
+                $('html,body').animate({
+                    scrollTop: c
+                });
+            })
+        })
+    </script>
 </body>
 </html>
