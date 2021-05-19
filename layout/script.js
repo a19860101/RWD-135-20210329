@@ -14,5 +14,16 @@ $(function(){
         $('.modal').fadeOut();
         return false;
     })
+    $('.nav-menu').find('a').click(function(e){
+        if($(this).data('scroll')){
+            let scroll = $(this).data('scroll');
+            let offset = $(scroll).offset().top;
+            $('html,body').animate({
+                scrollTop: offset
+            })
+            e.preventDefault();
+        }
+        
+    })
     
 })
