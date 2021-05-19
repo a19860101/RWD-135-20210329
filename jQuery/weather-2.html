@@ -8,51 +8,65 @@
     
 </head>
 <body>
+    <select name="" id="city">
+        <option>--請選擇--</option>
+        <option value="Taipei">台北</option>
+        <option value="Tokyo">東京</option>
+        <option value="Seoul">首爾</option>
+        <option value="Bangkok">曼谷</option>
+        <option value="Singapore">新加坡</option>
+        <option value="Manila">馬尼拉</option>
+    </select>
     <div class="container">
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
-            $.ajax({
-                url:'https://api.openweathermap.org/data/2.5/forecast',
-                data:{
-                    q:'Taipei',
-                    appid:'b1ecbccd638b763d489602917ba47cc3',
-                    units: 'metric',
-                    lang: 'zh_TW'
-                },
-                success(data){
-                    console.log(data);
-                    // for(let w of data.list){
-                    //     console.log(w);
-                    //     let content = `
-                    //         <div>
-                    //         <h1>溫度${w.main.temp} ${w.weather[0].description}</h1>
-                    //         <h2>體感溫度${w.main.feels_like}</h2>
-                    //         <div>最高溫${w.main.temp_max}最低溫${w.main.temp_min}</div>
-                    //         <hr>
-                    //         </div>
-                    //     `;
-                    //     $('.container').append(content);
-                    // }
-                    $(data.list).each(function(){
-                        console.log(this);
-                        let content = `
-                            <div>
-                                <h1>溫度${this.main.temp} ${this.weather[0].description}</h1>
-                                <h2>體感溫度${this.main.feels_like}</h2>
-                                <div>最高溫${this.main.temp_max}最低溫${this.main.temp_min}</div>
+            $('#city').change(function(){
+                let city = $(this).val();
+                console.log(city);
+                $.ajax({
+                    url:'https://api.openweathermap.org/data/2.5/forecast',
+                    data:{
+                        q:city,
+                        appid:'b1ecbccd638b763d489602917ba47cc3',
+                        units: 'metric',
+                        lang: 'zh_TW'
+                    },
+                    success(data){
+                        // console.log(data);
+                        for(let w of data.list){
+                            // console.log(w);
+                            let content = `
+                                <div>
+                                <h1>溫度${w.main.temp} ${w.weather[0].description}</h1>
+                                <h2>體感溫度${w.main.feels_like}</h2>
+                                <div>最高溫${w.main.temp_max}最低溫${w.main.temp_min}</div>
                                 <hr>
-                            </div>
-                        `;
-                        $('.container').append(content);
-                    })
-                },
-                error(){
+                                </div>
+                            `;
+                            $('.container').append(content);
+                        }
+                        // $(data.list).each(function(){
+                        //     console.log(this);
+                        //     let content = `
+                        //         <div>
+                        //             <h1>溫度${this.main.temp} ${this.weather[0].description}</h1>
+                        //             <h2>體感溫度${this.main.feels_like}</h2>
+                        //             <div>最高溫${this.main.temp_max}最低溫${this.main.temp_min}</div>
+                        //             <hr>
+                        //         </div>
+                        //     `;
+                        //     $('.container').append(content);
+                        // })
+                    },
+                    error(){
 
-                }
+                    }
+                })
             })
+            
         })
     </script>
 </body>
