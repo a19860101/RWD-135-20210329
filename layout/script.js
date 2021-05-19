@@ -30,5 +30,14 @@ $(function(){
             scrollTop: 0
         })
     })
+    $('#gotop').hide();
+    $(window).scroll(function(){
+        let h = $(window).scrollTop();
+        if(h > 800){
+            $('#gotop').fadeIn();
+        }else{
+            $('#gotop').fadeOut();
+        }
+    })
     
 })
