@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url:'https://api.openweathermap.org/data/2.5/forecast',
+                data:{
+                    q:'Taipei',
+                    appid:'b1ecbccd638b763d489602917ba47cc3',
+                    units: 'metric',
+                    lang: 'zh_TW'
+                },
+                success(data){
+                    console.log(data);
+                    // for(let w of data.list){
+                    //     console.log(w);
+                    //     let content = `
+                    //         <div>
+                    //         <h1>溫度${w.main.temp} ${w.weather[0].description}</h1>
+                    //         <h2>體感溫度${w.main.feels_like}</h2>
+                    //         <div>最高溫${w.main.temp_max}最低溫${w.main.temp_min}</div>
+                    //         <hr>
+                    //         </div>
+                    //     `;
+                    //     $('.container').append(content);
+                    // }
+                    $(data.list).each(function(){
+                        console.log(this);
+                        let content = `
+                            <div>
+                                <h1>溫度${this.main.temp} ${this.weather[0].description}</h1>
+                                <h2>體感溫度${this.main.feels_like}</h2>
+                                <div>最高溫${this.main.temp_max}最低溫${this.main.temp_min}</div>
+                                <hr>
+                            </div>
+                        `;
+                        $('.container').append(content);
+                    })
+                },
+                error(){
+
+                }
+            })
+        })
+    </script>
+</body>
+</html>
