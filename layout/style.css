@@ -8,9 +8,13 @@ nav {
 }
 .nav-collapse {
     width: 100%;
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     flex-direction: column;
+    display: none;
+}
+.nav-collapse.active{
+    display: flex;
 }
 .nav-link {
     color: var(--light);

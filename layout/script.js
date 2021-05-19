@@ -1,8 +1,9 @@
 $(function(){
-    $('.nav-collapse').hide();
+    // $('.nav-collapse').hide();
     $('.nav-toggle').click(function(){
         // $('.nav-collapse').toggle(600);
-        $('.nav-collapse').slideToggle();
+        // $('.nav-collapse').slideToggle();
+        $('.nav-collapse').toggleClass('active');
     })
     $('.modal-btn').click(function(){
         let modal = $(this).attr('href');
