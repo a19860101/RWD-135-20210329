@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+   </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
@@ -20,8 +22,12 @@
                 },
                 success(data){
                     console.log(data);
-                    console.log(data.main.feels_like);
-                    console.log(data.weather[0].description);
+                    let content = `
+                        <h1>現在溫度${data.main.temp} ${data.weather[0].description}</h1>
+                        <h2>體感溫度${data.main.feels_like}</h2>
+                        <div>最高溫${data.main.temp_max}最低溫${data.main.temp_min}</div>
+                    `;
+                    $('.container').append(content);
                 },
                 error(){
                     console.log('error');
