@@ -95,8 +95,8 @@
                     scrollTop: offset
                 })
 
-                $('nav').find('a').removeClass('active');
-                $(this).addClass('active');
+                // $('nav').find('a').removeClass('active');
+                // $(this).addClass('active');
                 return false;
                 
             })
@@ -112,7 +112,7 @@
                 let h = $(window).scrollTop();
                 let a_in = 'animated jackInTheBox';
                 let a_out = 'animated hinge';
-                console.log(h);
+                // console.log(h);
                 if(h > 700){
                     // $('#gotop').show();
                     // $('#gotop').fadeIn();
@@ -122,6 +122,16 @@
                     // $('#gotop').fadeOut();
                     $('#gotop').removeClass(a_in).addClass(a_out);
                 }
+                $('nav').find('a').each(function(){
+                    let scroll = $(this).attr('href');
+                    let offset = $(scroll).offset().top;
+                    console.log(offset);
+                    if(h > offset - 100){
+                        $('nav').find('a').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                })
+
             })
         })
     </script>
