@@ -24,6 +24,7 @@
     <script>
         $(function(){
             $('#city').change(function(){
+                $('.container').empty();
                 let city = $(this).val();
                 console.log(city);
                 $.ajax({
@@ -32,14 +33,16 @@
                         q:city,
                         appid:'b1ecbccd638b763d489602917ba47cc3',
                         units: 'metric',
-                        lang: 'zh_TW'
+                        lang: 'zh_TW',
+                        cnt:40
                     },
                     success(data){
-                        // console.log(data);
+                        console.log(data);
                         for(let w of data.list){
                             // console.log(w);
                             let content = `
                                 <div>
+                                    <img src="http://openweathermap.org/img/wn/${w.weather[0].icon}@2x.png">
                                 <h1>溫度${w.main.temp} ${w.weather[0].description}</h1>
                                 <h2>體感溫度${w.main.feels_like}</h2>
                                 <div>最高溫${w.main.temp_max}最低溫${w.main.temp_min}</div>
