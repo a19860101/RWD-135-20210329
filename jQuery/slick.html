@@ -16,7 +16,7 @@
             margin: auto;
         }
         .slick img {
-            margin: 5px;
+            /* margin: 5px; */
         }
     </style>
 </head>
@@ -46,10 +46,14 @@
         $(function(){
             $('.slick').slick({
                 autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 1500,
                 dots: true,
                 arrows: true,
-                slidesToShow: 5,
-                // slidesToScroll:5
+                slidesToShow: 1,
+                // slidesToScroll: 2,
+                centerMode: true,
+                // centerPadding: '200px'
             });
         })
     </script>
