@@ -50,7 +50,17 @@
         $(function(){
             $('.slider').owlCarousel({
                 items:1,
-                autoplay: true
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplaySpeed:1000,
+                dotsSpeed: 1000,
+                nav: true,
+                navSpeed: 1000,
+                // center: true,
+                margin: 10,
+                stagePadding: 200
+
             });
         })
             
