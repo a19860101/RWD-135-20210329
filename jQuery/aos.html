@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            background-image: linear-gradient(to top left,#fffc4a,#47ffe6);
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #e04;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" data-aos="fade-up"></div>
+        <div class="box" data-aos="fade-down"></div>
+    </div>
+    <div class="container">
+        <div class="box" data-aos="zoom-out-left"></div>
+        <div class="box" data-aos="zoom-out"></div>
+        <div class="box" data-aos="zoom-out-right"></div>
+    </div>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box" ></div>
+    </div>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box" ></div>
+        <div class="box"></div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
