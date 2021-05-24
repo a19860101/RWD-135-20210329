@@ -1,7 +1,4 @@
 AOS.init();
-AOS.init({
-    anchorPlacement:'top-center'
-});
 $(function(){
     // $('.nav-collapse').hide();
     $('.nav-toggle').click(function(){
